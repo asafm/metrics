@@ -44,13 +44,13 @@ public class GraphiteITest {
                                     BindMode.READ_WRITE)
                 .withClasspathResourceMapping("carbon.conf",
                                               "/opt/graphite/conf/carbon.conf",
-                                                BindMode.READ_WRITE)
+                                                BindMode.READ_ONLY)
                 .withClasspathResourceMapping("blacklist.conf",
                                               "/opt/graphite/conf/blacklist.conf",
-                                                BindMode.READ_WRITE)
+                                                BindMode.READ_ONLY)
                 .withClasspathResourceMapping("storage-schemas.conf",
                                               "/opt/graphite/conf/storage-schemas.conf",
-                                                BindMode.READ_WRITE)
+                                                BindMode.READ_ONLY)
                 .waitingFor(new HostPortWaitStrategy().withStartupTimeout(Duration.ofSeconds(10)))
                 .withLogConsumer(new Slf4jLogConsumer(logger).withPrefix("graphite"));
 
